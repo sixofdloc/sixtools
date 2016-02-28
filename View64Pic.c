@@ -3,8 +3,8 @@
  Name        : View64Pic.c
  Author      : Six/Style
  Version     :
- Copyright   : Fuck off.
- Description : Hello World in C, Ansi-style
+ Copyright   : None.
+ Description : Displays a variety of c64 image formats, using SDL
  ============================================================================
  */
 
