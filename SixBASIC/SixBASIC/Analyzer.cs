@@ -13,8 +13,6 @@ namespace SixBASIC
     }
     public class Analyzer
     {
-
-
         public List<AnalyzerMessage> strings = new List<AnalyzerMessage>();
         public List<AnalyzerMessage> tokens = new List<AnalyzerMessage>();
         public List<AnalyzerMessage> line_refs = new List<AnalyzerMessage>();

@@ -17,6 +17,7 @@ namespace bas2prg
                 {
                     Console.WriteLine("prg2bas");
                     Console.WriteLine("A commandline CBM Basic compiler.");
+                    Console.WriteLine("By Six/Style 2016");
                     Console.WriteLine("usage: prg2bas basfile.bas prgfile.prg");
                     Console.WriteLine();
                 }

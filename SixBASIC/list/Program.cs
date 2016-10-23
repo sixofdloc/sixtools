@@ -10,23 +10,33 @@ namespace list
     {
         static void Main(string[] args)
         {
-            if (args.Length < 1)
+            try
             {
-                Console.WriteLine("Usage:  list filename.prg");
-            }
-            else
-            {
-                BASIC basic = new BASIC();
-                basic.Load(args[1]);
-                List<string> slist = basic.List();
-                foreach (string s in slist)
+                if (args.Length < 1)
                 {
-                    Console.WriteLine(s);
+                    Console.WriteLine("list");
+                    Console.WriteLine("A commandline tool to list CBM Basic prg files.");
+                    Console.WriteLine("By Six/Style 2016");
+                    Console.WriteLine("usage: list filename.prg");
+                    Console.WriteLine();
                 }
-                Console.WriteLine("Press Any Key To Continue");
-                Console.ReadLine();
+                else
+                {
+                    BASIC basic = new BASIC();
+                    basic.Load(args[1]);
+                    List<string> slist = basic.List();
+                    foreach (string s in slist)
+                    {
+                        Console.WriteLine(s);
+                    }
+                    Console.WriteLine("Press Any Key To Continue");
+                    Console.ReadLine();
+                }
             }
-
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
 
         }
     }

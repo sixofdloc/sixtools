@@ -11,23 +11,36 @@ namespace prg2bas
     {
         static void Main(string[] args)
         {
-            if (args.Length < 2)
+            try
             {
-            }
-            else
-            {
-                BASIC basic = new BASIC();
-
-                if (basic.Load(args[0]))
+                if (args.Length < 2)
                 {
-                    List<string> slist = basic.List();
-                    File.WriteAllLines(args[1], slist);
+                    Console.WriteLine("bas2prg");
+                    Console.WriteLine("A commandline CBM Basic decompiler.");
+                    Console.WriteLine("By Six/Style 2016");
+                    Console.WriteLine("usage: bas2prg prgfile.prg basfile.bas");
+                    Console.WriteLine();
+
                 }
                 else
                 {
-                    Console.WriteLine("Load error: " + basic.LastError);
+                    BASIC basic = new BASIC();
+
+                    if (basic.Load(args[0]))
+                    {
+                        List<string> slist = basic.List();
+                        File.WriteAllLines(args[1], slist);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Load error: " + basic.LastError);
+                    }
+
                 }
-                //Console.ReadLine();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
 
         }
